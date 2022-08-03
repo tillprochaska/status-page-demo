@@ -25,12 +25,14 @@ permissions:
 
 jobs:
   build:
-    uses: alephdata/status-page-action@main
-    with:
-      # Title of the status page
-      title: My Status Page
-      # Link to your app, rendered in the header of the status page
-      app-url: https://example.org/custom
-    secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
-  
+    runs-on:
+      ubuntu-latest
+    steps:
+      - name: Build status page
+        uses: alephdata/status-page-action@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # Title of the status page
+          title: My Status Page
+          # Link to your app, rendered in the header of the status page
+          app-url: https://example.org/custom
