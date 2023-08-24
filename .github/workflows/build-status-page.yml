@@ -19,6 +19,8 @@ on:
       - edited
       - deleted
 
+concurrency: status-page
+
 permissions:
   contents: write
   issues: read
