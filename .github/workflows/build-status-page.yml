@@ -19,7 +19,9 @@ on:
       - edited
       - deleted
 
-concurrency: status-page
+concurrency:
+  group: status-page
+  cancel-in-progress: true
 
 permissions:
   contents: write
